@@ -1,0 +1,69 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group form
+////
+
+/// The `background-color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-background-color: #f2c0c1 !default;
+
+/// The `border-color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-border-color: #c04649 !default;
+
+/// The `box-shadow` for the fields when they have a failed validation.
+/// @type Keyword
+$form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35) !default;
+
+/// The `color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-color: #666666 !default;
+
+/// Variable that determines whether to maintain the style of "error" even at the time of `focus` or less.
+/// @type Boolean
+$form-input-error-focus-style: true !default;
+
+/// Mixin to apply the style of the fields with failed validation.
+///
+/// It will be applied to:
+/// `input`, `select` & `textarea`
+@mixin fields-validation-style {
+    &[disabled] {
+        color: $global-input-disabled-color;
+        opacity: $global-input-disabled-opacity;
+        box-shadow: none;
+        cursor: $global-input-disabled-cursor;
+    }
+
+    // Reset Firefox pseudo `:require` & `:invalid` attributes.
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+
+    &.#{$global-form-inputs-error-class} {
+        background-color: $form-input-error-background-color;
+        border-color: $form-input-error-border-color;
+        box-shadow: $form-input-error-box-shadow;
+        color: $form-input-error-color;
+
+        @if $form-input-error-focus-style {
+            &:hover:not(:focus):not([disabled]),
+            &:focus {
+                background-color: $form-input-error-background-color;
+                border-color: $form-input-error-border-color;
+                box-shadow: $form-input-error-box-shadow;
+            }
+        } @else {
+            &:hover:not(:focus):not([disabled]) {
+                background-color: $form-input-error-background-color;
+                border-color: $form-input-error-border-color;
+                box-shadow: $form-input-error-box-shadow;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+// Fonts
+// --------
+
+//google fonts
+$google-fonts-load: true;
+$google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
+
+
+//local fonts
+$font-dir: '../fonts/';
+$font-face-load: false;
+$font-face-map: (
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 ttf svg),
+);

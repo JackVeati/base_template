@@ -1,0 +1,76 @@
+/*!
+ * base_tamplate global
+ * Licensed under MIT Open Source
+ */
+
+////
+/// @group global
+////
+
+/// Variable to determine if we want to include flexbox utilities in our layout and to include mixins such as `foundation-xy-grid-classes` and `foundation-flex-classes`.
+///
+/// If set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored.
+/// @type Boolean
+$global-flexbox: true !default;
+
+/// Global font size apply to `html`.
+///
+/// This value is valid only if `$html-root-font-size` is `true`.
+/// @type Number
+$global-font-size: 100% !default;
+
+/// The default font size applied to the `body`.
+///
+/// This value is valid only if `$body-root-font-size` is `true`.
+/// @type Number
+$global-body-font-size: 16px !default;
+
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr !default;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+/// If `true` the default appearance will be set to `none`.
+///
+/// If you decide to enable this rule it will be easier to cross-browse the select on the various browsers and iOS devices.
+/// @type Boolean
+$global-select-reset-appearence: true !default;
+
+/// If `true` all the checkboxes and radios will be visually hidden in order to apply the mixin `checkbox-radio-classess` style.
+/// @type Boolean
+$global-custom-checkbox-radio: true !default;
+
+/// Global `disabled` input `color` value.
+///
+/// The color of the fields when they have the `disabled` attribute.
+/// @type Color|Keyword
+$global-input-disabled-color: inherit !default;
+
+/// Global `disabled` input `opacity` value.
+///
+/// This value is valid only if `$global-select-reset-appearence` is `true`.
+/// @type Integer|Float
+$global-input-disabled-opacity: 0.5 !default;
+
+/// Global `disabled` input `cursor` value.
+///
+/// The type of cursor when the fields have the `disabled` attribute.
+/// @type Keyword
+$global-input-disabled-cursor: not-allowed !default;
+
+/// The global class that is applied in the validation of the forms, usually via js.
+///
+/// This global class will be applied, if validation has failed to:
+/// - `input[type="email"]`,
+/// - `input[type="password"]`,
+/// - `input[type="search"]`,
+/// - `input[type="tel"]`,
+/// - `input[type="text"]`,
+/// - `input[type="url"]`
+/// - `select`,
+/// - `textarea`
+/// @type String
+$global-form-inputs-error-class: 'error' !default;

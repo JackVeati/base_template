@@ -1,0 +1,27 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group colors & palette
+////
+
+/// Function for catch HEX color in `$palette-color` map.
+/// @param {Color} $color - The key of `$palette-color` map.
+@function palette($color) {
+    @if map-has-key($palette-color, $color) {
+        @return map-get($palette-color, $color);
+    } @else {
+        @error 'No color palette found in `$palette-color` map.';
+    }
+}
+
+/// Mixin for mixin to intercept the **primary** key in `$palette-color` map.
+/// This mixin avoids having empty keys in `$palette-color` map.
+/// @access private
+@mixin manage-palette {
+    @if not map-has-key($palette-color, primary) {
+        @error 'In `$palette-color`, you must have a key named `primary`.';
+    }
+}

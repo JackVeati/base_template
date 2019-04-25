@@ -1,0 +1,87 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group layout
+////
+
+/// Mixin for visuallyhidden.
+///
+/// This hide the target element visually only, but not it's interaction.
+/// @group visibility
+@mixin visuallyhidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    white-space: nowrap;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+}
+
+/// Mixin for restores the style applied by `visuallyhidden` mixin.
+/// @group visibility
+@mixin visuallyhidden-off {
+    position: static !important;
+    width: auto;
+    height: auto;
+    border: initial;
+    white-space: inherit;
+    clip: none;
+    overflow: inherit;
+    margin: 0;
+}
+
+/// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+/// The clearfix is augmented with specific styles to prevent borders in flexbox environments.
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
+/// @link http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ Flexbox fix
+@mixin clearfix {
+    &::before, &::after {
+        content: '';
+        display: table;
+
+        @if ($global-flexbox) {
+            flex-basis: 0;
+            order: 1;
+        }
+	}
+
+    &::after {
+        clear: both;
+    }
+}
+
+/// Mixin for create a "layer" position can be used for modals.
+@mixin layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/// Mixin for simplify the syntax for iOS smooth scroll.
+@mixin ios-scroll {
+    -webkit-overflow-scrolling: touch;
+}
+
+/// Counter Increment Mixin, create a numerated list. Include this on a child selector on `::before` or `::after`.
+///
+/// The parent selector need `counter-reset: section;`
+/// @param {String} $separator - Any character as a type of separator is accepted.
+/// @param {String} $space [space] - It is possible to create a space after the separator or not. If set to `no-space` the space will not be present.
+@mixin counter-increment($separator, $space: 'space') {
+    @if ($space == 'no-space') {
+        $space: '';
+    } @else {
+        $space: ' ';
+    }
+
+    counter-increment: section; // sass-lint:disable space-after-comma
+    content: counters(section,'#{$separator}') $space;
+}

@@ -1,0 +1,123 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+/// The basic font size (`$global-font-size`) will be applied to `html`.
+/// @group typography
+/// @type Boolean
+$html-root-font-size: true !default;
+
+/// The tap highlight color for iOS devices.
+/// @group accessibility
+/// @type Color
+$ios-tap-color: transparent !default;
+
+/// The default body font family.
+/// @group typography
+/// @type String|Keyword
+$body-font-family: 'Work Sans', sans-serif !default;
+
+/// If it is `true` the basic font size (`$global-body-font-size`) will be applied to `body`.
+/// @group typography
+/// @type Boolean
+$body-root-font-size: false !default;
+
+/// The default font weight applied to the `body`.
+/// @group typography
+/// @type String|Integer
+$body-font-weight: normal !default;
+
+/// The default `body` background color.
+/// @group colors & palette
+/// @type Color
+$body-background-color: #ffffff !default;
+
+/// The default `body` base color.
+/// @group colors & palette
+/// @type Color
+$body-base-color: #666666 !default;
+
+/// The defaut `body` line-height.
+/// @group typography
+/// @type Integer|Float
+$body-line-height: 1.15 !default;
+
+/// Enable or disable the default `text-decoration` for all links.
+/// @group global
+/// @type Boolean
+$global-links-text-decoration: true !default;
+
+/// The global links color.
+/// @group colors & palette
+/// @type Color
+$links-color: #61afef !default;
+
+/// Enable or disable the default `outline` in `focus` for links.
+/// @group accessibility
+/// @type Boolean
+$focus-links-outline-hidden: true !default;
+
+/// Enable or disable the default `outline` in `focus` for `button`,`input`,`select`,`textarea`.
+/// @group accessibility
+/// @type Boolean
+$focus-inputs-outline-hidden: true !default;
+
+/// This variable preserves the default outline for links or fields of a form if the event is intercepted by the keyboard so the basic outline is not shown in focus if the event is determined by a mouse or touch.
+///
+/// The installation of `what-input` js is required.
+/// @group accessibility
+/// @type Boolean
+/// @link https://github.com/ten1seven/what-input
+$what-input-outline-keyboard-detect: true !default;
+
+/// Font family applied to the `strong` and` b` tags.
+/// @group typography
+/// @type String|Keyword
+$strong-font-family: inherit !default;
+
+/// Font weight applied to the `strong` and` b` tags.
+/// @group typography
+/// @type String|Keyword
+$strong-font-weight: bolder !default;
+
+/// Global text rendering applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group global
+/// @type Keyword
+$global-text-rendering: optimizeLegibility !default;
+
+/// If `true` the `$global-letter-spacing` will be applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group global
+/// @type Boolean
+$global-letter-spacing-apply: false !default;
+
+/// Global `letter-spacing` applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group global
+/// @type Keyword|Number
+$global-letter-spacing: normal !default;
+
+/// The `font-feature-settings: 'liga','kern'` rule is be applied to: `body`,` button`, `input`,` select` and `textarea`, which determines the "kering" between the various characters.
+/// @link https://blog.typekit.com/2014/02/05/kerning-on-the-web/
+/// @link https://practice.typekit.com/lesson/caring-about-opentype-features/
+/// @group global
+/// @type Boolean
+$global-font-liga-kern: true !default;
+
+/// The default `appearence` for `body`,` button`, `input`,` select` and `textarea` it be set to `none`.
+///
+/// If you decide to enable this rule it will be easier to cross-browse the field styles on the various browsers and iOS devices.
+/// @group global
+/// @type Boolean
+$global-input-reset-appearence: true !default;
+
+/// If `false` the default `search-cancel-button` will be hidden in all `type="search"` inputs.
+/// @group global
+/// @type Boolean
+$global-input-search-cancel-button: true !default;
+
+/// If `true` the all `select` it will be visually hidden in order to generate a select with custom options via js.
+/// @group global
+/// @type Boolean
+$global-select-reset-appearance-options: false !default;
+
+@import 'scss-normalize';

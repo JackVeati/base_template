@@ -1,0 +1,16 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+/// Clearfix classes.
+/// @group _global renderkit
+@mixin clearfix-classes {
+    .clearfix {
+        @include clearfix;
+    }
+
+    .clear-both {
+        clear: both;
+    }
+}

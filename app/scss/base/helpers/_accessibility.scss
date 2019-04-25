@@ -1,0 +1,76 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group accessibility
+////
+
+/// The default `background-color` selection for text and other elements.
+/// @type Keyword|Color
+$selection-background-color: #b3d4fc !default;
+
+/// If `true` the color will be applied based on the value of `$selection-color` of a selected element.
+/// @type Boolean
+$selection-color-apply: false !default;
+
+/// The color when an item is selected.
+/// @type Keyword|Color
+$selection-color: initial !default;
+
+/// Accessibility classes mixin.
+/// @group _global renderkit
+@mixin accessibility-classes {
+    ::selection {
+        background: $selection-background-color;
+        @if ($selection-color-apply) {
+            color: $selection-color;
+        }
+        text-shadow: none;
+    }
+
+    .invisible {
+        visibility: hidden !important;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    .visuallyhidden {
+        @include visuallyhidden;
+    }
+
+    .visuallyhidden-off {
+        @include visuallyhidden-off;
+    }
+
+    .no-select {
+        user-select: none;
+    }
+
+    .no-touch {
+        -webkit-touch-callout: none;
+        touch-action: none;
+    }
+
+    .no-text {
+        @include no-text;
+    }
+
+    .no-bullet {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    .no-overflow {
+        overflow: hidden;
+    }
+
+    @each $cursor in (pointer, default, grab, grabbing) {
+        .cursor-#{$cursor} {
+            cursor: $cursor;
+        }
+    }
+}

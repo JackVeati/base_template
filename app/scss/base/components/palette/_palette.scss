@@ -1,0 +1,32 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group colors & palette
+////
+
+/// Global default palette color used by RenderKit.
+///
+/// To help the `keys` nomenclature of the map, you can use this online tool
+/// http://www.color-blindness.com/color-name-hue/ to find the most suitable name for the hexadecimal.
+///
+/// Each `key` of this map agrees with 2 classes to be used in the templates.
+///
+/// @type Map
+/// @example .palette-color-primary, .background-color-primary
+/// @link http://www.color-blindness.com/color-name-hue/
+$palette-color: (
+    primary: #666666,
+    suvagrey: #8c8c8c,
+    darkgray: #b2b2b2,
+    gainsboro: #d9d9d9,
+    whitesmoke: #efefef,
+    cornflowerblue: #61afef,
+    sunset: #c04649,
+    coralcandy: #f2c0c1
+) !default;
+
+@import 'utils';
+@import 'classes';

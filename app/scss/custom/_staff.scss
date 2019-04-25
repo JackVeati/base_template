@@ -1,0 +1,61 @@
+.staff {
+  margin-top: 140px;
+  padding: 30px 15px;
+  @include breakpoint(medium down) {
+    margin-top: 100px;
+    padding: 0;
+  }
+
+  .staff-title {
+    letter-spacing: .125rem;
+    margin-bottom: 30px;
+  }
+  .staff-description {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .staff-box {
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+  .staff-card {
+    position: relative;
+    margin-bottom: 15px;
+
+    &:hover .card-block {
+      opacity: 1;
+    }
+
+    .staff-image {
+      display: block;
+      border-radius: 180px;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto;
+    }
+
+    .card-block {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: hsla(0, 0%, 100%, .80);
+      opacity: 0;
+
+      .staff-people-description {
+        margin-right: auto;
+        margin-left: auto;
+
+        h3 {
+          color: palette(5);
+        }
+      }
+    }
+  }
+}

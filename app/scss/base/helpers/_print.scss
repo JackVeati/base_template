@@ -1,0 +1,122 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+/// If `true`, all elements will have transparent backgrounds when printed, to save on ink.
+/// @type Boolean
+/// @group print
+$print-transparent-background: false !default;
+
+/// If `true`, all link have black color when printed.
+/// @group print
+$print-color-black: false !default;
+
+/// If `true`, all link show your `href` attribute when printed.
+/// @group print
+$print-link-href-show: false !default;
+
+/// The global margin that a page can have when printed.
+/// @group print
+$print-margin: 0.5cm !default;
+
+/// Mixin for global `@media print` elements. From original HTML5 boilerplate.
+/// @link https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+/// @group _global renderkit
+@mixin media-print {
+    @media print {
+        *, ::after, ::before {
+            text-shadow: none !important;
+
+            @if ($print-transparent-background) {
+                background: transparent !important;
+            }
+
+            @if ($print-color-black) {
+                color: #000000 !important;
+            }
+
+            box-shadow: none !important;
+        }
+
+        a, a:visited {
+            text-decoration: underline;
+        }
+
+        @if ($print-link-href-show) {
+            a[href]::after {
+                content: ' (' attr(href) ')';
+            }
+        } @else {
+            a[href^="javascript:"]::after,
+            a[href^="#"]::after {
+                content: '';
+            }
+        }
+
+        abbr[title]::after {
+            content: ' (' attr(title) ')';
+        }
+
+        blockquote, pre, table {
+            page-break-inside: avoid;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        img, tr {
+            page-break-inside: avoid;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h2, h3, p {
+            orphans: 3;
+            widows: 3;
+        }
+
+        h2, h3 {
+            page-break-after: avoid;
+        }
+
+        .show-for-print {
+            display: block !important;
+        }
+
+        .hide-for-print {
+            display: none !important;
+        }
+
+        table.show-for-print {
+            display: table !important;
+        }
+
+        thead.show-for-print {
+            display: table-header-group !important;
+        }
+
+        tbody.show-for-print {
+            display: table-row-group !important;
+        }
+
+        tr.show-for-print {
+            display: table-row !important;
+        }
+
+        td.show-for-print {
+            display: table-cell !important;
+        }
+
+        th.show-for-print {
+            display: table-cell !important;
+        }
+
+        @page {
+            margin: $print-margin;
+        }
+    }
+}

@@ -1,0 +1,157 @@
+$color-menu: palette(1);
+$menu-height: 100px;
+$menu-height-mobile: 60px;
+$hambgcolor: palette(4);
+$hambasewidth: 50px;
+
+.top-menu {
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color-menu;
+  letter-spacing: .125rem;
+  z-index: 100;
+  height: $menu-height;
+
+  @include breakpoint(medium down) {
+    margin-top: 0;
+    height: $menu-height-mobile;
+  }
+
+  .switches-group {
+    display: inline-block;
+    padding: 0 15px;
+ &.logo {
+   //padding: 0 15px;
+ }
+    @include breakpoint(medium down) {
+
+      &.logo {
+        position: absolute;
+      }
+    }
+    .switches-control {
+      &.nav-mobile {
+        display: none;
+
+        @include breakpoint(medium down) {
+          display: inline-block;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .anci-logo {
+
+    .anci-home {
+      display: block;
+      width: 80px;
+      padding: 10px 0;
+      margin-right: auto;
+
+      @include breakpoint(medium down) {
+        width: 60px;
+        padding: 0;
+      }
+    }
+  }
+
+  .navigation-menu {
+    float: right;
+    padding: 20px 15px;
+    @include breakpoint(medium down) {
+      padding: 0;
+      width: 100%;
+    }
+
+    ul {
+      @include breakpoint(medium down) {
+        margin-top: $menu-height-mobile;
+        background-color: $color-menu;
+        text-align: center;
+        list-style: none;
+        width: 100%;
+      }
+    }
+
+    .menu-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+      z-index: 80;
+
+      @include breakpoint(medium down) {
+        display: none;
+      }
+
+      .menu-item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+
+        @include breakpoint(medium down) {
+          text-align: center;
+          padding: 16px;
+          border-bottom: 1px solid palette(2);
+        }
+
+        &:not(:last-of-type) {
+          padding-right: 50px;
+
+          @include breakpoint(medium down) {
+            padding-right: 16px;
+          }
+        }
+        a:link {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+
+  .nav-mobile {
+    width: $hambasewidth;
+    height: $hambasewidth;
+    border: 0;
+    background-color: transparent;
+    padding: 20px 10px;
+    display: inline-block;
+    float: right;
+
+    .nav-mobile-line {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 1px;
+      background-color: $hambgcolor;
+      transition: background-color 0.2s ease;
+      margin: 10px 0;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid black;
+        transition: transform 0.3s ease;
+      }
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        top: 10px;
+      }
+    }
+  }
+  }
+}

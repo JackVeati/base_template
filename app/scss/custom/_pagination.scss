@@ -1,0 +1,53 @@
+.pagination {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pag-navigation {
+  font-family: sans-serif;
+  padding: 1em;
+  background: #fff;
+  background: hsl(0, 0%, 100%);
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+
+  .current {
+    background: palette(6);
+    font-weight: bold;
+    color: #fff;
+    border-radius: 999px;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0 .1em;
+    padding: .2em .6em;
+    color: #999;
+    border-radius: 999px;
+
+    &:hover {
+      background: palette(5);
+    }
+  }
+}
+
+.page-numbers {
+  a, span {
+    padding: .3em .7em;
+    color: #333;
+    color: hsl(0, 0%, 20%);
+  }
+  a {
+    &:hover {
+      color: #000;
+      color: hsl(0, 0%, 0%);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group typography
+////
+
+/// The `font-family` applied on each paragraphs.
+/// @type String|Keyword
+$paragraph-font-family: 'Josefin Sans', sans-serif !default;
+
+/// The `font-weight` applied on each paragraphs.
+/// @type Keyword|Integer
+$paragraph-font-weight: normal !default;
+
+/// The `line-height` applied on each paragraphs.
+/// @type Integer|Float
+$paragraph-line-height: 1.4 !default;
+
+/// The `letter-spacing` applied on each paragraphs.
+/// @type String|Integer
+$paragraph-letter-spacing: normal !default;
+
+/// The `text-transform` applied on each paragraphs.
+/// @type Keyword
+$paragraph-text-transform: none !default;
+
+/// The `color` applied on each paragraphs.
+/// @type Color
+$paragraph-color: #666666 !default;
+
+/// The `margin` applied on each paragraphs.
+/// @type Integer|Keyword
+$paragraph-margin: 0 !default;
+
+/// Mixin for set global paragraph style
+@mixin paragraph-style {
+    p {
+        font: {
+            family: $paragraph-font-family;
+            weight: $paragraph-font-weight;
+        }
+        line-height: $paragraph-line-height;
+        letter-spacing: $paragraph-letter-spacing;
+        text-transform: $paragraph-text-transform;
+        color: $paragraph-color;
+        margin: $paragraph-margin;
+    }
+}

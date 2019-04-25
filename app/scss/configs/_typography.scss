@@ -1,0 +1,48 @@
+// Typography: Base
+// -------------------
+
+$html-root-font-size: false;
+$body-root-font-size: false;
+$body-font-family: 'Work Sans', sans-serif;
+$body-font-weight: normal;
+$body-line-height: 1.15;
+
+// Typography: Headers
+// -------------------
+
+$headers-font-family: inherit;
+$headers-font-weight: bold;
+$headers-line-height: 1.4;
+$headers-letter-spacing: normal;
+$headers-text-transform: uppercase;
+$headers-margin-bottom: 16px;
+$header-styles: (
+    small: (
+        'h1': ('font-size': 24),
+        'h2': ('font-size': 20),
+        'h3': ('font-size': 19),
+        'h4': ('font-size': 18),
+        'h5': ('font-size': 17),
+        'h6': ('font-size': 16),
+    ),
+    medium: (
+        'h1': ('font-size': 48),
+        'h2': ('font-size': 40),
+        'h3': ('font-size': 31),
+        'h4': ('font-size': 25),
+        'h5': ('font-size': 20),
+        'h6': ('font-size': 16),
+    ),
+);
+
+// Typography: Headers
+// -------------------
+
+$paragraph-font-family: 'Josefin Sans', sans-serif;
+$paragraph-font-weight: normal;
+$paragraph-line-height: 1.4;
+$paragraph-letter-spacing: normal;
+$paragraph-text-transform: none;
+$paragraph-margin: 0;
+$strong-font-family: inherit;
+$strong-font-weight: bolder;

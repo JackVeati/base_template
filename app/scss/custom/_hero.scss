@@ -1,0 +1,124 @@
+.hero-title {
+  text-decoration: none;
+  color: palette(5);
+  h3 {
+
+    letter-spacing: .125rem;
+    margin-bottom: 30px;
+  }
+}
+
+.big-hero {
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(medium down) {
+    margin-top: 60px;
+
+  }
+
+  .wrap-link {
+    text-decoration: none;
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      color: palette(3);
+    }
+  }
+
+  .data-content {
+    position: absolute;
+    bottom: 15%;
+
+    @include breakpoint(medium down) {
+
+      display: flex;
+      -ms-flex-align: center;
+      align-items: flex-end;
+      -ms-flex-pack: center;
+      justify-content: center;
+      bottom: 0;
+      left: 0;
+      right:0;
+    }
+
+    h2, p {
+      padding: 10px 20px;
+    }
+  }
+  .left {
+    left: 15px;
+    text-align: left;
+
+    @include breakpoint(medium down) {
+      left: 0;
+    }
+  }
+  .right {
+    right: 15px;
+    text-align: right;
+
+    @include breakpoint(medium down) {
+      right: 0;
+    }
+  }
+  .center {
+    text-align: center;
+  }
+
+}
+
+.hero-2col {
+  padding: 30px 15px;
+  background-color: palette(2);
+
+  .biography-description {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .biography {
+    align-items: center;
+    flex-direction: row;
+
+    &:nth-child(2n+2) {
+      flex-direction: row-reverse;
+      @include breakpoint(medium down) {
+        flex-direction: column;
+      }
+    }
+    @include breakpoint(medium down) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .biography-image,
+    .biography-text {
+      width: 50%;
+      @include breakpoint(medium down) {
+        width: 100%;
+      }
+    }
+    .biography-text {
+      margin: auto;
+      padding-right: 45px;
+      padding-left: 45px;
+
+      @include breakpoint(medium down) {
+        margin-top: 15px;
+        padding: 0;
+      }
+    }
+    .biography-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.charity {
+  background-color: white;
+}

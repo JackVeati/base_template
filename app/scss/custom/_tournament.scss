@@ -1,0 +1,257 @@
+.tournament {
+  margin-top: 140px;
+  padding: 30px 15px;
+  @include breakpoint(medium down) {
+    margin-top: 100px;
+    padding: 0;
+  }
+
+  .tournament-box {
+    padding: 15px;
+    text-align: center;
+    .tournament-type {
+      padding: 0;
+      &:not(:first-child) {
+        float: left;
+      }
+      @include breakpoint(medium down) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.tournament-accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+
+  img {
+    filter: grayscale(100%);
+  }
+
+  h3 {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.active, .tournament-accordion:hover {
+  background-color: #ccc;
+
+  img {
+    filter: none;
+  }
+}
+
+.tournament-description {
+  margin-top: 15px;
+}
+
+.tournament-form {
+  padding: 15px 0;
+  display: none;
+  overflow: hidden;
+}
+
+.tournament-info {
+  padding: 30px 0;
+  @include breakpoint(medium down) {
+    padding: 0;
+  }
+  .tour-title {
+    padding: 15px 15px 0 15px;
+    text-align: left;
+    @include breakpoint(medium down) {
+      text-align: center;
+    }
+  }
+  .tour-info-box {
+
+    .tour-info {
+      li {
+        padding: 10px 0;
+        text-decoration: none;
+      }
+    }
+
+    .custom-bullet {
+      margin-top: 15%;
+      font-size: 21px;
+      display: inline-block;
+      list-style: none;
+
+      @include breakpoint(medium down) {
+        margin-top: 0;
+        font-size: 16px;
+      }
+
+      li {
+        clear: left;
+
+        &:before {
+          content: "";
+          height: 35px;
+          width: 35px;
+          display: block;
+          float: left;
+          background-image: url(../images/layout/cursors/ball.svg);
+          background-size: 80%;
+          background-repeat: no-repeat;
+          margin-bottom: 15px;
+          margin-right: 15px;
+
+          @include breakpoint(medium down) {
+            height: 22px;
+            width: 22px;
+            background-size: 100%;
+            margin-right: 10px;
+            margin-bottom: 0;
+          }
+        }
+      }
+      &:hover:before {
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+.tour-map {
+  @include breakpoint(medium down) {
+    padding: 0;
+  }
+  .acf-map {
+    width: 100%;
+    height: 400px;
+    margin: 15px 0;
+  }
+}
+
+.tour-description {
+  margin: 30px 0;
+  padding: 0 30px;
+  font-size: 18px;
+  text-align: justify;
+
+  @include breakpoint(medium down) {
+    padding: 0 15px;
+  }
+}
+
+.tour-document {
+
+  border-bottom: 1px solid palette(2);
+  padding-bottom: 30px;
+
+  .tour-doc-title {
+    padding: 15px;
+    margin-bottom: 30px;
+    background: palette(6);
+    text-align: center;
+    p {
+      font-size: 21px;
+      text-transform: uppercase;
+    }
+  }
+  .tour-doc-list {
+    list-style-type: none;
+
+     .columns {
+       float: left;
+     }
+    a {
+      display: inline-block;
+      padding: 10px 0;
+      text-decoration: none;
+    }
+
+    .tour-doc-item {
+
+      .tour-pdf-download {
+        position: relative;
+        padding-left: 40px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0px;
+          width: 35px;
+          height: 41px;
+          background: url(../images/layout/cursors/download.svg) center no-repeat;
+          background-size: 80%;
+        }
+        &:hover:before {
+          background-size: 100%;
+
+          @include breakpoint(medium down) {
+            background-size: 80%;
+          }
+        }
+      }
+      a {
+        display: inline-block;
+        padding: 10px 0;
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+
+.sponsorTour {
+
+  .sponsor {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid palette(6);
+    padding: 15px 0;
+
+    @include breakpoint(medium down) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+    .sponsor-title {
+      float: left;
+      margin: 30px;
+      min-width: 30%;
+    }
+
+    .sponsor-item {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include breakpoint(medium down) {
+        padding: 0;
+        justify-content: center;
+      }
+
+      li {
+        margin-left: 10px;
+        margin-bottom: 15px;
+        img {
+          max-width: 200px;
+        }
+
+      }
+    }
+}

@@ -1,0 +1,44 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group fonts
+////
+
+/// The default font dir for catch all font file.
+/// @type String
+$font-dir: '../fonts/' !default;
+
+/// Quickly enable or disable the `@font-face` directive for load "font face" fonts.
+///
+/// If it is `true` the values ​​of the `$font-face-map` will be read.
+/// @type Boolen
+$font-face-load: false !default;
+
+/// The default `$font-face-map` used by RenderKit.
+///
+/// The parameters of the map are detailed below:
+/// - `MyFontFamily` The `font-family` of your font.
+/// - `myfilename` The file name of your font. If the files are in a folder you can simply edit the string by adding the correct path ex: `pathtofile/myfilename`
+/// - `normal` The font style of your font.
+/// - `400` The font weight of your font.
+/// - `eot woff woff2 ttf svg` The available extensions of your font.
+/// @type Map
+$font-face-map: (
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 ttf svg)
+) !default;
+
+/// Quickly enable or disable the `@import` directive for load Google fonts.
+/// @type Boolen
+$google-fonts-load: true !default;
+
+/// The default Google Fonts used by by RenderKit.
+///
+/// `$google-fonts-family` accept the name of the font after string `?family=`.
+/// @type String
+$google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface' !default;
+
+@import 'utils';
+@import 'global-fonts';

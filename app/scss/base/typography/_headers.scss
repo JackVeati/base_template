@@ -1,0 +1,55 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+////
+/// @group typography
+////
+
+/// The `font-family` applied on each headers.
+/// @type Keyword|String
+$headers-font-family: inherit !default;
+
+/// The `font-weight` applied on each headers.
+/// @type Keyword|Integer
+$headers-font-weight: bold !default;
+
+/// The `line-height` applied on each headers.
+/// @type Float|Integer|Keyword
+$headers-line-height: 1.4 !default;
+
+/// The `text-transform` applied on each headers.
+/// @type Keyword
+$headers-text-transform: uppercase !default;
+
+/// The `letter-spacing` applied on each headers.
+/// @type Keyword|Number
+$headers-letter-spacing: normal !default;
+
+/// The `color` applied on each headers.
+/// @type Color
+$headers-color: #666666 !default;
+
+/// The `color` applied on each headers.
+/// @type Number
+$headers-margin-bottom: 16px !default;
+
+/// Mixin for global headers style
+///
+/// Each header has in association a class to invoke in the templates.
+@mixin headers-style {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6, {
+        font: {
+            family: $headers-font-family;
+            weight: $headers-font-weight;
+        }
+        text-transform: $headers-text-transform;
+        color: $headers-color;
+    }
+}

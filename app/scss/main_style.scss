@@ -1,0 +1,32 @@
+//
+// base_tamplate 
+// Licensed under MIT Open Source
+//
+
+ @import 'global';
+ @import 'configs/configs';
+ @import 'base/base';
+ @import 'custom/custom';
+ 
+ @mixin scss-light {
+     @include global-fonts;
+     @include scss-normalize;
+     @include media-print;
+     @include global-typography;
+     @include accessibility-classes;
+     @include foundation-visibility-classes;
+     @include float-classes;
+     @include clearfix-classes;
+ 
+     @if ($global-flexbox) {
+         @include foundation-xy-grid-classes;
+         @include foundation-flex-classes;
+     } @else {
+         @include foundation-grid;
+     }
+ 
+     @include form-style;
+     @include checkbox-radio-classes;
+     @include colors-palette;
+     @include shape-classes;
+ }

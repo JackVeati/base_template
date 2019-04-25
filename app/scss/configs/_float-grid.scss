@@ -1,0 +1,12 @@
+// Float Grid
+// -------------
+
+$grid-row-width: 1200px;
+$grid-column-count: 12;
+$grid-column-gutter: (
+    small: 20px,
+    medium: 30px,
+);
+$grid-column-align-edge: true;
+$grid-column-alias: 'columns';
+$block-grid-max: 8;
